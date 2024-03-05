@@ -1,0 +1,18 @@
+<div *ngIf="aluno">
+    <h1 style="text-align: center;">
+        Deseja Confirmar a Exclusão?
+    </h1>
+    <div>
+        <h2>Aluno:</h2>
+        <p>{{aluno.nome}}</p>
+
+        <h2>Turma:</h2>
+        <p>{{aluno.turma}}</p>
+
+    </div>
+
+    <div>
+        <button (mat-raised-button color="warn" click)="Excluir()">Confirmar Exclusão</button>
+        <button (mat-raised-button click)="Cancelar()">Voltar</button>
+    </div>
+</div>

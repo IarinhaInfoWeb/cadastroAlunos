@@ -1,0 +1,54 @@
+<mat-card>
+
+<h1>Cadastrar Aluno</h1>
+
+<form [formGroup]="alunoForm" (ngSubmit)="submit()" #formDit="ngForm">
+    <input type="hidden" formControlName="id">
+
+<div class="input_box">
+    <mat-form-field>
+    <mat-label for="">Código da Matrícula:</mat-label>
+    <input matInput type="text" formControlName="codigodaMatricula" placeholder="Insira o número da matrícula!" required>
+    </mat-form-field>
+</div>
+
+<div class="input_box">
+    <mat-form-field> 
+    <mat-label for="">Nome:</mat-label>
+    <input matInput type="text" formControlName="nome" placeholder="Insira o nome do aluno!" required>
+    </mat-form-field>
+</div>
+
+<div class="input_box">
+    <mat-form-field>
+    <mat-label for="">Turma:</mat-label>
+    <mat-select id="turma:" formControlName="turma" required>
+        <mat-option value="Turma_1A">Turma_1A</mat-option>
+        <mat-option value="Turma_1B">Turma_1B</mat-option>
+        <mat-option value="Turma_2A">Turma_2A</mat-option>
+        <mat-option value="Turma_2B">Turma_2B</mat-option>
+        <mat-option value="Turma_3A">Turma_3A</mat-option>
+        <mat-option value="Turma_3B">Turma_3B</mat-option>
+        <mat-option value="Turma_4A">Turma_4A</mat-option>
+        <mat-option value="Turma_4B">Turma_4B</mat-option>
+    </mat-select>
+</mat-form-field>
+</div>
+
+<div class="input_box">
+    <mat-form-field>
+    <mat-label for="">Local da Foto:</mat-label>
+    <input matInput type="text" formControlName="foto" placeholder="Insira o local onde a foto está salva!" required>
+    </mat-form-field>
+</div>
+
+<div class="btn-box">
+    <mat-form-field>
+    <button type="submit" [disabled]="!alunoForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
+    <button routerLink="" mat-raised-button>Voltar</button>
+    </mat-form-field>
+</div>
+
+</form>
+
+</mat-card>
