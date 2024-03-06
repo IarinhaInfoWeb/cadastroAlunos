@@ -15,10 +15,10 @@
 <table  mat-table [dataSource] = "alunos"  class = "mat-elevation-z8">
 
     <ng-container  matColumnDef = "Situação"> 
-      <th  mat-header-cell*matHeaderCellDef> Situação </th> 
-      <td  mat-cell*matCellDef = "let aluno">
+      <th  mat-header-cell *matHeaderCellDef> Situação </th> 
+      <td  mat-cell *matCellDef = "let aluno">
 
-        <div *ngIf="element.ativo == true; else inativo">
+        <div *ngIf="aluno.ativo == true; else inativo">
             <img src="assets/Images/Ativo.png" alt="" style="height: 20px; width: 20px">
         </div>                   
           
@@ -30,41 +30,41 @@
     </ng-container >
  
     <ng-container  matColumnDef = "Código da Matrícula"> 
-        <th  mat-header-cell*matHeaderCellDef> Código da Matrícula </th> 
-        <td  mat-cell*matCellDef = "let aluno"> {{ element.codigodaMatricula}} </td > 
+        <th  mat-header-cell *matHeaderCellDef> Código da Matrícula </th> 
+        <td  mat-cell *matCellDef = "let aluno"> {{ aluno.codigodaMatricula}} </td > 
     </ng-container >
 
     <ng-container  matColumnDef = "Nome do Aluno"> 
-        <th  mat-header-cell*matHeaderCellDef> Nome do Aluno </th> 
-        <td  mat-cell*matCellDef = "let aluno"> {{ element.nome}} </td > 
+        <th  mat-header-cell *matHeaderCellDef> Nome do Aluno </th> 
+        <td  mat-cell *matCellDef = "let aluno"> {{ aluno.nome}} </td > 
     </ng-container >
  
     <ng-container  matColumnDef = "Local da Foto"> 
-        <th  mat-header-cell*matHeaderCellDef> Local da Foto </th> 
-        <td  mat-cell*matCellDef = "let aluno"> {{ element.foto}} </td > 
+        <th  mat-header-cell *matHeaderCellDef> Local da Foto </th> 
+        <td  mat-cell *matCellDef = "let aluno"> {{ aluno.foto}} </td > 
     </ng-container >
 
     <ng-container  matColumnDef = "Ações"> 
-        <th  mat-header-cell*matHeaderCellDef> </th> 
-        <td  mat-cell*matCellDef = "let aluno"> 
+        <th  mat-header-cell *matHeaderCellDef> </th> 
+        <td  mat-cell *matCellDef = "let aluno"> 
         
-            <button routerLink="/editar-alunos/{{element.id}}"mat-raised-button color="accent">Editar</button>
-            <button routerLink="/detalhes-alunos/{{element.id}}" mat-raised-button>Detalhes</button>
+            <button routerLink="/editar-alunos/{{aluno.id}}"mat-raised-button color="accent">Editar</button>
+            <button routerLink="/detalhes-alunos/{{aluno.id}}" mat-raised-button>Detalhes</button>
 
         </td > 
     </ng-container >
 
     <ng-container  matColumnDef = "Excluir"> 
-        <th  mat-header-cell*matHeaderCellDef> </th> 
-        <td  mat-cell*matCellDef = "let aluno">
+        <th  mat-header-cell *matHeaderCellDef> </th> 
+        <td  mat-cell *matCellDef = "let aluno">
         
-            <button mat-raised-button color="warn" (click)="OpenDialog(element.id)">Excluir</button>
+            <button mat-raised-button color="warn" (click)="OpenDialog(aluno.id)">Excluir</button>
         
         </td > 
     </ng-container >
   
-    <tr  mat-header-row*matHeaderRowDef = "colunas" > </tr > 
-    <tr  mat-row*matRowDef = "let row; columns: colunas;"> </tr > 
+    <tr  mat-header-row *matHeaderRowDef = "colunas" > </tr > 
+    <tr  mat-row *matRowDef = "let row; columns: colunas;"> </tr > 
 
   </table>
 

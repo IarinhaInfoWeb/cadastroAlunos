@@ -25,7 +25,7 @@ export class ExcluirComponent implements OnInit {
   ngOnInit(): void {
     this.inputdata = this.data;
      this.AlunoService.GetAluno(this.inputdata.id).subscribe((aluno)=>{
-      this.aluno.dados;
+      this.aluno = aluno.dados;
 
      });
     

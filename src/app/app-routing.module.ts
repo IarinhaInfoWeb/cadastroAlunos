@@ -6,10 +6,10 @@ import { EditarAlunosComponent } from './pages/editar-alunos/editar-alunos.compo
 import { DetalhesAlunosComponent } from './pages/detalhes-alunos/detalhes-alunos.component';
 
 const routes: Routes = [
-{path:'/cadastro-alunos', component: CadastroAlunosComponent},
-{path: '/', component: HomeAlunosComponent},
-{path: '/editar-alunos/:id', component:EditarAlunosComponent},
-{path: '/detalhes-alunos/:id', component:DetalhesAlunosComponent}
+{path:'cadastro-alunos', component: CadastroAlunosComponent},
+{path: '', component: HomeAlunosComponent},
+{path: 'editar-alunos/:id', component:EditarAlunosComponent},
+{path: 'detalhes-alunos/:id', component:DetalhesAlunosComponent}
 ];
 
 @NgModule({
